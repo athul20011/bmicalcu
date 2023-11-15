@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>BIM Calculator</title>
+</head>
+<body>
+  <div class="calculator">
+    <img src="https://th.bing.com/th/id/R.88d657d646ccb42677ad26b0b5e6e92a?rik=3Ydz1ZdHABmY1Q&riu=http%3a%2f%2fstore-images.s-microsoft.com%2fimage%2fapps.12704.13510798883387075.11fefadc-d06e-47ea-ba7c-b6d93bd7d07b.c3b135de-cfc1-4c59-9796-5103ec4c89e9&ehk=U6j2KFNGKKpgVFjxsRQC5qx3XLL%2bNLVhtV9vKJcXQ0Q%3d&risl=&pid=ImgRaw&r=0" alt=""  width="40%">
+    <h1>BMI Calculator</h1>
+    <label for="length">LENGTH</label>
+    <input type="number" id="length" placeholder="Enter length">
+    
+    <label for="width">WIDTH</label>
+    <input type="number" id="width" placeholder="Enter width">
+    
+    <button onclick="calculateArea()">Calculate Area</button>
+    
+    <h2>Result:</h2>
+    <p id="result">Area will be displayed here</p>
+  </div>
+
+  <script>
+    function calculateArea() {
+    var length = parseFloat(document.getElementById('length').value);
+    var width = parseFloat(document.getElementById('width').value);
+  
+    if (isNaN(length) || isNaN(width)) {
+      document.getElementById('result').innerText = 'Please enter valid numbers';
+    } else {
+      var area = length * width;
+      document.getElementById('result').innerText = 'Area: ' + area.toFixed(2) + ' square meters';
+    }
+  }
+  
+  
+  </script>
+</body>
+
+</html>
